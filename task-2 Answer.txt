@@ -1,9 +1,0 @@
-1. Props are used to pass data from a parent component to a child component.Ref is used to directly access or control a DOM element (like input, button, etc.)
-
-2.State allows a component to remember and update data (like input text or a counter value).useState is a React Hook used to create and manage state in a functional component.
-
-3.Event Handling in React is used to respond to user actions like clicks, typing, etc.Events are written in camelCase (e.g., onClick, onChange).
-
-4.Conditional Rendering in React is used to show or hide elements based on certain conditions.
-
-5.Lists & Keys in React are used to render multiple similar items (like a list of todos). Each item in a list needs a unique key prop to help React track changes efficiently.
