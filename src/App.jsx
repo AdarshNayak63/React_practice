@@ -1,18 +1,15 @@
-import Header from './components/Header'
-import SampleComponent from './components/SampleComponent'
+import Card from "./components/Card";
+import ThemeButton from "./components/ThemeButton";
 
 function App() {
-
-  const currentYear = new Date().getFullYear();
-
+  
   return (
-    <>
-      <Header />
-      <h1>Hello World</h1>
-      <SampleComponent />
-      <p>This is the currentYear : {currentYear}</p>
-    </>
-  )
+    <div style={{ padding: "20px" }}>
+      <Card />
+      <br />
+      <ThemeButton />
+    </div>
+  );
 }
 
-export default App
+export default App;
