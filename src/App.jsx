@@ -1,18 +1,16 @@
-import Header from './components/Header'
-import SampleComponent from './components/SampleComponent'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import UserProfile from "./pages/UserProfile";
 
 function App() {
-
-  const currentYear = new Date().getFullYear();
-
   return (
-    <>
-      <Header />
-      <h1>Hello World</h1>
-      <SampleComponent />
-      <p>This is the currentYear : {currentYear}</p>
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/user/:id" element={<UserProfile />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
