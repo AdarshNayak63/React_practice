@@ -5,7 +5,7 @@ import {
   ChevronDown,
   CircleDot
 } from "lucide-react";
-import { useVpa } from "../context/VpaContext.jsx";
+import { useVpa } from "../../../core/providers/VpaProvider.jsx";
 const Dashboard = () => {
   const { vpaList, selectedVpa, setSelectedVpa, loading: vpaGlobalLoading, refreshVpas } = useVpa();
   const [showVpaModal, setShowVpaModal] = useState(false);
@@ -284,3 +284,4 @@ var Dashboard_default = Dashboard;
 export {
   Dashboard_default as default
 };
+

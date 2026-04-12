@@ -1,6 +1,6 @@
 import { jsx, jsxs } from "react/jsx-runtime";
 import { LogIn } from "lucide-react";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../../core/providers/AuthProvider.jsx";
 const Login = () => {
   const { login } = useAuth();
   return /* @__PURE__ */ jsx(
@@ -74,3 +74,4 @@ var Login_default = Login;
 export {
   Login_default as default
 };
+

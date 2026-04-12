@@ -1,8 +1,8 @@
 import { jsx, jsxs } from "react/jsx-runtime";
 import { useState, useEffect } from "react";
 import { ChevronDown, Check } from "lucide-react";
-import { useVpa } from "../context/VpaContext.jsx";
-import { apiService } from "../services/apiService";
+import { useVpa } from "../../../core/providers/VpaProvider.jsx";
+import { apiService } from "../../../services/apiService.js";
 import { AlertCircle } from "lucide-react";
 const Soundbox = () => {
   const { selectedVpa, loading: vpaGlobalLoading } = useVpa();
@@ -171,3 +171,4 @@ var Soundbox_default = Soundbox;
 export {
   Soundbox_default as default
 };
+

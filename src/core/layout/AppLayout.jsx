@@ -1,6 +1,6 @@
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   LayoutDashboard,
   QrCode,
@@ -10,12 +10,11 @@ import {
   FileText,
   Menu
 } from "lucide-react";
-import { useAuth } from "../context/AuthContext";
-import { useVpa } from "../context/VpaContext.jsx";
+import { useAuth } from "../providers/AuthProvider.jsx";
+import { useVpa } from "../providers/VpaProvider.jsx";
 const Layout = ({ children }) => {
   const { user, logout } = useAuth();
   const { selectedVpa } = useVpa();
-  const navigate = useNavigate();
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const [showProfileModal, setShowProfileModal] = useState(false);
   const menuItems = [
@@ -78,7 +77,6 @@ const Layout = ({ children }) => {
         {
           onClick: () => {
             logout();
-            navigate("/login");
           },
           style: {
             display: "flex",
@@ -157,7 +155,6 @@ const Layout = ({ children }) => {
                     onClick: (e) => {
                       e.stopPropagation();
                       logout();
-                      navigate("/login");
                     },
                     onMouseEnter: (e) => e.currentTarget.style.backgroundColor = "#f5f5f5",
                     onMouseLeave: (e) => e.currentTarget.style.backgroundColor = "transparent",
@@ -284,3 +281,4 @@ var Layout_default = Layout;
 export {
   Layout_default as default
 };
+

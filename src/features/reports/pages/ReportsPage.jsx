@@ -8,8 +8,8 @@ import {
   ChevronRight,
   ArrowUpDown
 } from "lucide-react";
-import { useVpa } from "../context/VpaContext.jsx";
-import { apiService, formatDateDDMMYYYY, getTodayDDMMYYYY } from "../services/apiService";
+import { useVpa } from "../../../core/providers/VpaProvider.jsx";
+import { apiService, formatDateDDMMYYYY, getTodayDDMMYYYY } from "../../../services/apiService.js";
 const Reports = () => {
   const { selectedVpa } = useVpa();
   const [filterMode, setFilterMode] = useState("Today");
@@ -419,3 +419,4 @@ var Reports_default = Reports;
 export {
   Reports_default as default
 };
+

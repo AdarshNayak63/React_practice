@@ -1,7 +1,7 @@
 import { jsx, jsxs } from "react/jsx-runtime";
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { userManager } from "../services/authService";
+import { userManager } from "../../../services/authService.js";
 const RedirectHandler = () => {
   const navigate = useNavigate();
   const callbackProcessed = useRef(false);
@@ -57,3 +57,4 @@ var RedirectHandler_default = RedirectHandler;
 export {
   RedirectHandler_default as default
 };
+

@@ -1,7 +1,7 @@
 import { jsx } from "react/jsx-runtime";
 import { createContext, useContext, useState, useEffect } from "react";
-import { apiService } from "../services/apiService";
-import { useAuth } from "./AuthContext";
+import { apiService } from "../../services/apiService.js";
+import { useAuth } from "./AuthProvider.jsx";
 const VpaContext = createContext(void 0);
 const VpaProvider = ({ children }) => {
   const [vpaList, setVpaList] = useState([]);
@@ -73,3 +73,4 @@ export {
   VpaProvider,
   useVpa
 };
+

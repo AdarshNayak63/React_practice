@@ -1,6 +1,6 @@
 import { jsx } from "react/jsx-runtime";
 import { createContext, useContext, useEffect, useState } from "react";
-import { userManager } from "../services/authService";
+import { userManager, login as loginUser, logout as logoutUser } from "../../services/authService.js";
 const AuthContext = createContext(void 0);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -19,8 +19,8 @@ const AuthProvider = ({ children }) => {
       userManager.events.removeUserUnloaded(onUserUnloaded);
     };
   }, []);
-  const login = () => userManager.signinRedirect();
-  const logout = () => userManager.signoutRedirect();
+  const login = () => loginUser();
+  const logout = () => logoutUser();
   return /* @__PURE__ */ jsx(AuthContext.Provider, { value: { user, loading, login, logout }, children });
 };
 const useAuth = () => {
@@ -32,3 +32,4 @@ export {
   AuthProvider,
   useAuth
 };
+

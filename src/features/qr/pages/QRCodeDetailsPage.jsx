@@ -5,8 +5,8 @@ import {
   User,
   Check
 } from "lucide-react";
-import { apiService } from "../services/apiService";
-import { useVpa } from "../context/VpaContext.jsx";
+import { apiService } from "../../../services/apiService.js";
+import { useVpa } from "../../../core/providers/VpaProvider.jsx";
 const QRCodePage = () => {
   const { selectedVpa, loading: vpaLoading } = useVpa();
   if (vpaLoading && !selectedVpa) {
@@ -207,3 +207,4 @@ var QRCodePage_default = QRCodePage;
 export {
   QRCodePage_default as default
 };
+

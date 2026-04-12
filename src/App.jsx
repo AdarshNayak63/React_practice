@@ -1,15 +1,15 @@
 import { jsx, jsxs } from "react/jsx-runtime";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import { AuthProvider, useAuth } from "./context/AuthContext.jsx";
-import Layout from "./components/Layout.jsx";
-import Login from "./pages/Login.jsx";
-import RedirectHandler from "./pages/RedirectHandler.jsx";
-import Dashboard from "./pages/Dashboard.jsx";
-import Reports from "./pages/Reports.jsx";
-import Soundbox from "./pages/Soundbox.jsx";
-import QRCodePage from "./pages/QRCodePage.jsx";
-import Support from "./pages/Support.jsx";
-import ErrorBoundary from "./components/ErrorBoundary.jsx";
+import { AuthProvider, useAuth } from "./core/providers/AuthProvider.jsx";
+import Layout from "./core/layout/AppLayout.jsx";
+import Login from "./features/auth/pages/LoginPage.jsx";
+import RedirectHandler from "./features/auth/pages/AuthRedirectPage.jsx";
+import Dashboard from "./features/dashboard/pages/DashboardHome.jsx";
+import Reports from "./features/reports/pages/ReportsPage.jsx";
+import Soundbox from "./features/soundbox/pages/SoundboxLanguagePage.jsx";
+import QRCodePage from "./features/qr/pages/QRCodeDetailsPage.jsx";
+import Support from "./features/support/pages/SupportDeskPage.jsx";
+import ErrorBoundary from "./core/boundary/AppErrorBoundary.jsx";
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
   if (loading) {
@@ -23,7 +23,7 @@ const ProtectedRoute = ({ children }) => {
   }
   return /* @__PURE__ */ jsx(Layout, { children });
 };
-import { VpaProvider } from "./context/VpaContext.jsx";
+import { VpaProvider } from "./core/providers/VpaProvider.jsx";
 function App() {
   return /* @__PURE__ */ jsx(Router, { children: /* @__PURE__ */ jsx(ErrorBoundary, { children: /* @__PURE__ */ jsx(AuthProvider, { children: /* @__PURE__ */ jsx(VpaProvider, { children: /* @__PURE__ */ jsxs(Routes, { children: [
     /* @__PURE__ */ jsx(Route, { path: "/login", element: /* @__PURE__ */ jsx(Login, {}) }),
