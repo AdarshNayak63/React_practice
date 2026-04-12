@@ -1,16 +1,59 @@
-# React + Vite
+# PNB Merchant Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, React-based portal for PNB merchants to manage their Soundbox devices, track transaction reports, and generate UPI QR codes.
 
-Currently, two official plugins are available:
+## 🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Dashboard**: Real-time view of device status (Online/Offline) and transaction summary.
+- **Transaction Reports**: Detailed transaction logs with support for Excel export and date filtering.
+- **QR Details**: Generate and download both Static and Dynamic UPI QR codes.
+- **Language Update**: Manage Soundbox audio notifications by updating device language (Hindi, English, etc.) via remote status updates.
+- **Profile Management**: View detailed merchant and device information directly from the authenticated session.
 
-## React Compiler
+## 🛠️ Technology Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React 18, TypeScript, Vite
+- **Styling**: Vanilla CSS (Modern design patterns, Glassmorphism)
+- **Icons**: Lucide React
+- **Authentication**: OIDC (OpenID Connect) via `oidc-client-ts`
+- **API Layer**: Axios with centralized `apiService`
+- **State Management**: React Context API (`AuthContext`, `VpaContext`)
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```text
+src/
+├── assets/         # Images and SVGs (PNB Logo)
+├── components/     # Reusable components (Layout, Modals)
+├── context/        # Global state (Auth, VPA/Merchant data)
+├── pages/          # Page components (Dashboard, Reports, Login, etc.)
+├── services/       # API and Authentication services
+└── styles/         # Global CSS and Design Tokens
+```
+
+## ⚙️ Setup Instructions
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+1. Clone the repository.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running Locally
+1. Start the development server:
+   ```bash
+   npm run dev
+   ```
+2. The portal will be available at `http://localhost:3000`.
+
+## 🔒 Security & Environment
+- The application uses Vite proxies (`vite.config.ts`) to handle CORS and route requests to PNB Staging/UAT endpoints.
+- Authentication is handled via a secure OIDC flow. Tokens are automatically attached to all API requests via Axios interceptors.
+
+## 📄 License
+Internal PNB Merchant Tool.
